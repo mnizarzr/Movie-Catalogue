@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Movie Catalogue</string>
+    <string name="nav_title_movie">Movies</string>
+    <string name="nav_title_tvshow">TV Shows</string>
+    <string name="change_language_settings">Change Language Settings</string>
+    <string name="text_title">Title</string>
+    <string name="text_overview">Overview</string>
+    <string name="text_release_date">Release Date:</string>
+    <string name="text_no_overview">No Overview</string>
+    <string name="content_desc_movie_poster">Movie Poster</string>
+    <string name="text_popular_movies">Most Popular Movies</string>
+    <string name="text_most_popular_tvshow">Most Popular TV Shows</string>
+    <string name="add_to_favorite">Add to favorite</string>
+    <string name="added_favorite">Added to favorite</string>
+    <string name="delete_favorite">Deleted from Favorite</string>
+    <string name="nav_title_favorited">Favorited</string>
+    <string name="text_empty">Empty</string>
+    <string name="add_widget">Add widget</string>
+    <string name="appwidget_text">Favorite Movies and TV Shows</string>
+
+</resources>

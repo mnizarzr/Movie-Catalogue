@@ -1,0 +1,20 @@
+<resources>
+    <string name="content_desc_movie_poster">Poster Film</string>
+    <string name="text_overview">Ikhtisar</string>
+    <string name="text_release_date">Tanggal Rilis:</string>
+    <string name="change_language_settings">Ganti Pengaturan Bahasa</string>
+    <string name="nav_title_movie">Film</string>
+    <string name="nav_title_tvshow">Serial</string>
+    <string name="text_title">Judul</string>
+    <string name="text_no_overview">Ikhtisar tidak tersedia</string>
+    <string name="text_popular_movies">Film Terpopuler</string>
+    <string name="text_most_popular_tvshow">Serial Terpopuler</string>
+    <string name="nav_title_favorited">Favorit</string>
+    <string name="add_to_favorite">Tambahkan ke Favorit</string>
+    <string name="added_favorite">Ditambahkan ke Favorit</string>
+    <string name="delete_favorite">Dihapus dari Favorit</string>
+    <string name="text_empty">Kosong</string>
+    <string name="app_name">Movie Catalogue</string>
+    <string name="appwidget_text">Film dan Serial Favorit</string>
+    <string name="add_widget">Tambah widget</string>
+</resources>

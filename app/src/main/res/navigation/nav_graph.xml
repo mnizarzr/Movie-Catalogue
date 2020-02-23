@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/movieFragment">
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="io.github.mnizarzr.moviecatalogue.fragment.MovieFragment"
+        android:label="@string/text_popular_movies"
+        tools:layout="@layout/fragment_movie">
+        <action
+            android:id="@+id/action_movieFragment_to_tvShowFragment"
+            app:destination="@id/tvShowFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tvShowFragment"
+        android:name="io.github.mnizarzr.moviecatalogue.fragment.TvShowFragment"
+        android:label="@string/text_most_popular_tvshow"
+        tools:layout="@layout/fragment_tvshow" >
+        <action
+            android:id="@+id/action_tvShowFragment_to_favoriteFragment2"
+            app:destination="@id/favoriteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="io.github.mnizarzr.moviecatalogue.fragment.FavoriteFragment"
+        android:label="@string/nav_title_favorited"
+        tools:layout="@layout/fragment_favorite" />
+</navigation>
