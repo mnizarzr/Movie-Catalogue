@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Consumer</string>
+    <string name="content_desc_movie_poster">Poster</string>
+    <string name="text_title">Judul</string>
+    <string name="text_overview">Ikhtisar</string>
+    <string name="app_title">Film dan Serial Favorit</string>
+    <string name="text_no_data">Tidak ada data saat ini</string>
+</resources>

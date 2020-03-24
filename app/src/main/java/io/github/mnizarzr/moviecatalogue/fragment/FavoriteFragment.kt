@@ -1,16 +1,22 @@
 package io.github.mnizarzr.moviecatalogue.fragment
 
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.provider.Settings
+import android.view.*
 import androidx.fragment.app.Fragment
 import io.github.mnizarzr.moviecatalogue.R
+import io.github.mnizarzr.moviecatalogue.SettingsActivity
 import io.github.mnizarzr.moviecatalogue.adapter.SectionsPagerAdapter
 import kotlinx.android.synthetic.main.fragment_favorite.*
 
 class FavoriteFragment : Fragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +31,20 @@ class FavoriteFragment : Fragment() {
 
         tabLayout.setupWithViewPager(viewPager)
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.main_menu, menu)
+        menu.findItem(R.id.search).isVisible = false
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_change_settings -> startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+            R.id.action_settings -> startActivity(Intent(context, SettingsActivity::class.java))
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }

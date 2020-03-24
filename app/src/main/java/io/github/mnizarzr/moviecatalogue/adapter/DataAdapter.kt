@@ -31,10 +31,12 @@ class DataAdapter(private val mContext: Context) :
 
     private val listMovies = ArrayList<ItemResult>()
 
-    fun setData(items: ArrayList<ItemResult>) {
-        listMovies.clear()
-        listMovies.addAll(items)
-        notifyDataSetChanged()
+    fun setData(items: ArrayList<ItemResult>?) {
+        if (items != null) {
+            listMovies.clear()
+            listMovies.addAll(items)
+            notifyDataSetChanged()
+        }
     }
 
     override fun getItemViewType(position: Int): Int {

@@ -15,6 +15,7 @@ import io.github.mnizarzr.moviecatalogue.R
 import io.github.mnizarzr.moviecatalogue.adapter.FavoriteAdapter
 import io.github.mnizarzr.moviecatalogue.data.entity.Favorite
 import io.github.mnizarzr.moviecatalogue.data.viewmodel.FavoriteViewModel
+import io.github.mnizarzr.moviecatalogue.utils.Constants.KIND_MOVIE
 import kotlinx.android.synthetic.main.fragment_list_favorite.*
 
 class MovieFavoriteFragment : Fragment() {
@@ -33,7 +34,7 @@ class MovieFavoriteFragment : Fragment() {
 
         favoriteViewModel = ViewModelProvider(this).get(FavoriteViewModel::class.java)
 
-        favoriteViewModel.allMoviesFavorited.observe(this, Observer {
+        favoriteViewModel.allMoviesFavorited.observe(viewLifecycleOwner, Observer {
             // Catatan: Tidak menggunakan loading progress bar karena load
             // dari local storage cepat
             if (it.isNotEmpty() && it != null) {
@@ -55,7 +56,7 @@ class MovieFavoriteFragment : Fragment() {
             override fun onItemClicked(data: Favorite) {
                 Intent(context, DetailFavoriteActivity::class.java).apply {
                     putExtra(DetailFavoriteActivity.EXTRA_DATA, data)
-                    putExtra(DetailFavoriteActivity.EXTRA_KIND, "movie")
+                    putExtra(DetailFavoriteActivity.EXTRA_KIND, KIND_MOVIE)
                     startActivity(this)
                 }
             }

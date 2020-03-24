@@ -15,6 +15,7 @@ import io.github.mnizarzr.moviecatalogue.R
 import io.github.mnizarzr.moviecatalogue.adapter.FavoriteAdapter
 import io.github.mnizarzr.moviecatalogue.data.entity.Favorite
 import io.github.mnizarzr.moviecatalogue.data.viewmodel.FavoriteViewModel
+import io.github.mnizarzr.moviecatalogue.utils.Constants.KIND_TVSHOW
 import kotlinx.android.synthetic.main.fragment_list_favorite.*
 
 class TvShowFavoriteFragment : Fragment() {
@@ -33,7 +34,7 @@ class TvShowFavoriteFragment : Fragment() {
 
         favoriteViewModel = ViewModelProvider(this).get(FavoriteViewModel::class.java)
 
-        favoriteViewModel.allTvFavorited.observe(this, Observer {
+        favoriteViewModel.allTvFavorited.observe(viewLifecycleOwner, Observer {
             if (it.isNotEmpty() && it != null) {
                 dataAdapter.setData(it)
                 txtState.visibility = View.GONE
@@ -53,7 +54,7 @@ class TvShowFavoriteFragment : Fragment() {
             override fun onItemClicked(data: Favorite) {
                 Intent(context, DetailFavoriteActivity::class.java).apply {
                     putExtra(DetailFavoriteActivity.EXTRA_DATA, data)
-                    putExtra(DetailFavoriteActivity.EXTRA_KIND, "tvShow")
+                    putExtra(DetailFavoriteActivity.EXTRA_KIND, KIND_TVSHOW)
                     startActivity(this)
                 }
             }

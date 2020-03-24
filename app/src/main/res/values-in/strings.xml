@@ -2,7 +2,7 @@
     <string name="content_desc_movie_poster">Poster Film</string>
     <string name="text_overview">Ikhtisar</string>
     <string name="text_release_date">Tanggal Rilis:</string>
-    <string name="change_language_settings">Ganti Pengaturan Bahasa</string>
+    <string name="change_language">Ganti Bahasa</string>
     <string name="nav_title_movie">Film</string>
     <string name="nav_title_tvshow">Serial</string>
     <string name="text_title">Judul</string>
@@ -17,4 +17,17 @@
     <string name="app_name">Movie Catalogue</string>
     <string name="appwidget_text">Film dan Serial Favorit</string>
     <string name="add_widget">Tambah widget</string>
+    <string name="search">Pencarian</string>
+    <string name="search_hint">Masukkan judul</string>
+    <string name="title_activity_settings">Setelan</string>
+    <string name="pref_title_reminder">Pengingat</string>
+    <string name="pref_item_daily">Pengingat harian</string>
+    <string name="pref_item_release">Pengingat rilis</string>
+    <string name="enabled_daily">Pengingat harian diaktifkan</string>
+    <string name="disabled_daily">Pengingat harian dinonaktifkan</string>
+    <string name="enabled_release">Pengingat rilis diaktifkan</string>
+    <string name="disabled_release">Pengingat rilis dinonaktifkan</string>
+    <string name="notification_title_daily_reminder">Pengingat harian</string>
+    <string name="notification_text_daily_reminder">Ayo kembali untuk melihat film terpopuler</string>
+    <string name="has_release">telah release</string>
 </resources>

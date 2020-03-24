@@ -2,7 +2,7 @@
     <string name="app_name">Movie Catalogue</string>
     <string name="nav_title_movie">Movies</string>
     <string name="nav_title_tvshow">TV Shows</string>
-    <string name="change_language_settings">Change Language Settings</string>
+    <string name="change_language">Change Language</string>
     <string name="text_title">Title</string>
     <string name="text_overview">Overview</string>
     <string name="text_release_date">Release Date:</string>
@@ -17,5 +17,22 @@
     <string name="text_empty">Empty</string>
     <string name="add_widget">Add widget</string>
     <string name="appwidget_text">Favorite Movies and TV Shows</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Enter title</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="pref_title_reminder">Reminder</string>
+    <string name="pref_item_daily">Daily reminder</string>
+    <string name="pref_item_release">Release reminder</string>
+
+    <string name="enabled_daily">Daily reminder enabled</string>
+    <string name="disabled_daily">Daily reminder disabled</string>
+    <string name="enabled_release">Release reminder enabled</string>
+    <string name="disabled_release">Release reminder disabled</string>
+    <string name="notification_title_daily_reminder">Daily reminder</string>
+    <string name="notification_text_daily_reminder">Check out the latest popular movies</string>
+    <string name="has_release">is released</string>
+    <string name="not_available">NA</string>
 
 </resources>

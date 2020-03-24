@@ -34,4 +34,20 @@ class MovieViewModel : ViewModel() {
         return listMovies
     }
 
+    internal fun searchMovies(query: String) : LiveData<ArrayList<ItemResult>> {
+        val movies = MutableLiveData<ArrayList<ItemResult>>()
+        apiService.searchMovie(query).enqueue(object : Callback<ApiResponse> {
+            override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
+                Log.e("ERR_GET_MOVIES", t.message ?: "Unknown Error")
+            }
+
+            override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
+                response.body()?.let {
+                    movies.postValue(it.results)
+                }
+            }
+        })
+        return movies
+    }
+
 }

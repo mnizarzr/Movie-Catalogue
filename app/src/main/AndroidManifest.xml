@@ -3,6 +3,12 @@
     package="io.github.mnizarzr.moviecatalogue">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <permission
+        android:name="io.github.mnizarzr.moviecatalogue.READ_WRITE"
+        android:protectionLevel="normal" />
 
     <application
         android:allowBackup="true"
@@ -12,17 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <receiver android:name=".FavoriteBannerWidget">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/favorite_banner_widget_info" />
-        </receiver>
-
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -32,6 +33,38 @@
         </activity>
         <activity android:name=".DetailActivity" />
         <activity android:name=".DetailFavoriteActivity" />
+
+        <receiver android:name=".widget.FavoriteBannerWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/favorite_banner_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".receiver.DailyReminder"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".receiver.ReleaseReminder"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".widget.StackWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <provider
+            android:name=".provider.AppProvider"
+            android:authorities="io.github.mnizarzr.moviecatalogue"
+            android:enabled="true"
+            android:exported="true"
+            android:multiprocess="true"
+            android:permission="io.github.mnizarzr.moviecatalogue.READ_WRITE" />
     </application>
 
 </manifest>

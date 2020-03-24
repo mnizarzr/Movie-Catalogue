@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Consumer</string>
+    <string name="content_desc_movie_poster">Poster</string>
+    <string name="text_title">Movie Title</string>
+    <string name="text_overview">Movie Overview</string>
+    <string name="app_title">Favorited Movies and TV Shows</string>
+    <string name="text_no_data">No data at this time</string>
+</resources>

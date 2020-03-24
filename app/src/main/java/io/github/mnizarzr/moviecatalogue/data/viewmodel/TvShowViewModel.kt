@@ -34,4 +34,20 @@ class TvShowViewModel : ViewModel() {
         return listTvShow
     }
 
+    internal fun searchTvShows(query: String) : LiveData<ArrayList<ItemResult>> {
+        val tvShows= MutableLiveData<ArrayList<ItemResult>>()
+        apiService.searchTvShow(query).enqueue(object : Callback<ApiResponse> {
+            override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
+                Log.e("ERR_GET_MOVIES", t.message ?: "Unknown Error")
+            }
+
+            override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
+                response.body()?.let {
+                    tvShows.postValue(it.results)
+                }
+            }
+        })
+        return tvShows
+    }
+
 }

@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-@Entity(tableName = "tbl_favorite")
+@Entity(tableName = "favorite")
 data class Favorite(
     @PrimaryKey(autoGenerate = true)
     val id: Int?,

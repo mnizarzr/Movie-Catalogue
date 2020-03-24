@@ -15,6 +15,7 @@ import io.github.mnizarzr.moviecatalogue.data.viewmodel.FavoriteViewModel
 import io.github.mnizarzr.moviecatalogue.utils.showToast
 import kotlinx.android.synthetic.main.activity_detail.*
 import java.text.SimpleDateFormat
+import java.util.*
 
 class DetailFavoriteActivity : AppCompatActivity() {
 
@@ -44,12 +45,18 @@ class DetailFavoriteActivity : AppCompatActivity() {
             isFavorite = it > 0
         })
 
-        val date = SimpleDateFormat(DATE).parse(data.releaseDate)!!
+        if (data.releaseDate.isNotBlank()) {
+            val date = SimpleDateFormat(DATE, Locale.getDefault()).parse(data.releaseDate)
+            val textDate =
+                date?.let { SimpleDateFormat(FORMATTED_DATE, Locale.getDefault()).format(it) }
+            txtReleaseDate.text = textDate
+        }
+
         val overview: String =
             if (data.overview.isNotEmpty()) data.overview else resources.getString(R.string.text_no_overview)
         txtTitle.text = data.title
         txtOverview.text = overview
-        txtReleaseDate.text = SimpleDateFormat(FORMATTED_DATE).format(date)
+
         if (data.posterPath == null || data.posterPath.isBlank()) {
             imgMovie.load(R.drawable.cover_not_available) {
                 crossfade(true)
